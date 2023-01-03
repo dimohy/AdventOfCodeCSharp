@@ -110,73 +110,49 @@ namespace _2022
 
                 // 왼쪽 탐색
                 var (sx, sy) = (x - 1, y);
-                var high = -1;
                 while (sx >= 0)
                 {
                     var another = map[sx, sy];
-                    if (another > center && another <= high)
-                        break;
-                    if (another < center && center <= high)
-                        break;
-
-                    if (another > high)
-                        high = another;
-
                     sx--;
+
+                    if (another >= center)
+                        break;
                 }
                 score *= x - (sx + 1);
 
                 // 오른쪽 탐색
                 (sx, sy) = (x + 1, y);
-                high = -1;
                 while (sx < xLength)
                 {
                     var another = map[sx, sy];
-                    if (another > center && another <= high)
-                        break;
-                    if (another < center && center <= high)
-                        break;
-
-                    if (another > high)
-                        high = another;
-
                     sx++;
+
+                    if (another >= center)
+                        break;
                 }
                 score *= (sx - 1) - x;
 
                 // 위 탐색
                 (sx, sy) = (x, y - 1);
-                high = -1;
                 while (sy >= 0)
                 {
                     var another = map[sx, sy];
-                    if (another > center && another <= high)
-                        break;
-                    if (another < center && center <= high)
-                        break;
-
-                    if (another > high)
-                        high = another;
-
                     sy--;
+
+                    if (another >= center)
+                        break;
                 }
                 score *= y - (sy + 1);
 
                 // 아래 탐색
                 (sx, sy) = (x, y + 1);
-                high = -1;
                 while (sy < yLength)
                 {
                     var another = map[sx, sy];
-                    if (another > center && another <= high)
-                        break;
-                    if (another < center && center <= high)
-                        break;
-
-                    if (another > high)
-                        high = another;
-
                     sy++;
+
+                    if (another >= center)
+                        break;
                 }
                 score *= (sy - 1) - y;
 
