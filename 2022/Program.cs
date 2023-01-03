@@ -29,3 +29,8 @@ Console.WriteLine("Day9 Results:");
 var day9Input = File.ReadAllText("day9_input.txt");
 Console.WriteLine(Day9.Solve1(day9Input));
 Console.WriteLine(Day9.Solve2(day9Input));
+
+Console.WriteLine("Day10 Results:");
+var day10Input = File.ReadAllText("day10_input.txt");
+Console.WriteLine(Day10.Solve1(day10Input));
+Console.WriteLine(Day10.Solve2(day10Input));

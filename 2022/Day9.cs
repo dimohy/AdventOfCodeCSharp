@@ -129,7 +129,7 @@ namespace _2022
                 }
             }
 
-            Draw(tailHistory);
+            //Draw(tailHistory);
 
             return tailHistory.Distinct().Count().ToString();
         }
