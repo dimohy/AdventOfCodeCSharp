@@ -2,6 +2,9 @@
 
 using SuperLinq;
 
+
+/*
+
 Console.WriteLine("Day5 Results:");
 var day5Input = File.ReadAllText("day5_input.txt");
 Console.WriteLine(Day5.Solve1(day5Input));
@@ -39,3 +42,16 @@ Console.WriteLine("Day11 Results:");
 var day11Input = File.ReadAllText("day11_input.txt");
 Console.WriteLine(Day11.Solve1(day11Input));
 Console.WriteLine(Day11.Solve2(day11Input));
+
+
+Console.WriteLine("Day12 Results:");
+var day12Input = File.ReadAllText("day12_input.txt");
+Console.WriteLine(Day12.Solve1(day12Input));
+Console.WriteLine(Day12.Solve2(day12Input));
+
+*/
+
+Console.WriteLine("Day13 Results:");
+var day13Input = File.ReadAllText("day13_input.txt");
+Console.WriteLine(Day13.Solve1(day13Input));
+Console.WriteLine(Day13.Solve2(day13Input));

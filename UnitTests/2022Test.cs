@@ -558,4 +558,94 @@ public class Day5Test
     {
         return Day11.Solve2(input);
     }
+
+    [TestCase("""
+        Sabqponm
+        abcryxxl
+        accszExk
+        acctuvwj
+        abdefghi
+        """, ExpectedResult = "31")]
+    public string Day12_Test1(string input)
+    {
+        return Day12.Solve1(input);
+    }
+
+    [TestCase("""
+        [1,1,3,1,1]
+        [1,1,5,1,1]
+        
+        [[1],[2,3,4]]
+        [[1],4]
+        
+        [9]
+        [[8,7,6]]
+        
+        [[4,4],4,4]
+        [[4,4],4,4,4]
+        
+        [7,7,7,7]
+        [7,7,7]
+        
+        []
+        [3]
+        
+        [[[]]]
+        [[]]
+        
+        [1,[2,[3,[4,[5,6,7]]]],8,9]
+        [1,[2,[3,[4,[5,6,0]]]],8,9]
+        """, ExpectedResult = "13")]
+    public string Day13_Test1(string input)
+    {
+        return Day13.Solve1(input);
+    }
+
+    [TestCase("""
+        [[]]
+        [[[]]]
+        """, ExpectedResult = "1")]
+    public string Day13_Test1_1(string input)
+    {
+        return Day13.Solve1(input);
+    }
+
+    [TestCase("""
+        [2]
+        [[3]]
+        """, ExpectedResult = "1")]
+    public string Day13_Test1_2(string input)
+    {
+        return Day13.Solve1(input);
+    }
+
+    [TestCase("""
+        [1,1,3,1,1]
+        [1,1,5,1,1]
+        
+        [[1],[2,3,4]]
+        [[1],4]
+        
+        [9]
+        [[8,7,6]]
+        
+        [[4,4],4,4]
+        [[4,4],4,4,4]
+        
+        [7,7,7,7]
+        [7,7,7]
+        
+        []
+        [3]
+        
+        [[[]]]
+        [[]]
+        
+        [1,[2,[3,[4,[5,6,7]]]],8,9]
+        [1,[2,[3,[4,[5,6,0]]]],8,9]
+        """, ExpectedResult = "140")]
+    public string Day13_Test2(string input)
+    {
+        return Day13.Solve2(input);
+    }
 }
