@@ -648,4 +648,22 @@ public class Day5Test
     {
         return Day13.Solve2(input);
     }
+
+    [TestCase("""
+        498,4 -> 498,6 -> 496,6
+        503,4 -> 502,4 -> 502,9 -> 494,9
+        """, ExpectedResult = "24")]
+    public string Day14_Test1(string input)
+    {
+        return Day14.Solve1(input);
+    }
+
+    [TestCase("""
+        498,4 -> 498,6 -> 496,6
+        503,4 -> 502,4 -> 502,9 -> 494,9
+        """, ExpectedResult = "24")]
+    public string Day14_Test2(string input)
+    {
+        return Day14.Solve2(input);
+    }
 }
