@@ -9,7 +9,7 @@ namespace _2022;
 
 public class Day11 : ISolve
 {
-    public static string Solve1(string input)
+    public static string Solve1(string input, params object[] args)
     {
         var monkeys = input.Split(Environment.NewLine)
             .Chunk(7)
@@ -37,7 +37,7 @@ public class Day11 : ISolve
             .ToString();
     }
 
-    public static string Solve2(string input)
+    public static string Solve2(string input, params object[] args)
     {
         var monkeys = input.Split(Environment.NewLine)
             .Chunk(7)

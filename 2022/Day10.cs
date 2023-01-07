@@ -8,7 +8,7 @@ namespace _2022;
 
 public class Day10 : ISolve
 {
-    public static string Solve1(string input)
+    public static string Solve1(string input, params object[] args)
     {
         var commands = input.Split(Environment.NewLine);
         var machine = new Machine();
@@ -22,7 +22,7 @@ public class Day10 : ISolve
         return sum.ToString();
     }
 
-    public static string Solve2(string input)
+    public static string Solve2(string input, params object[] args)
     {
         var commands = input.Split(Environment.NewLine);
         var machine = new Machine();

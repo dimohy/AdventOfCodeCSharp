@@ -5,7 +5,7 @@ namespace _2022;
 
 public class Day6 : ISolve
 {
-    public static string Solve1(string input)
+    public static string Solve1(string input, params object[] args)
     {
         for (var i = 0; i < input.Length; i++)
         {
@@ -26,7 +26,7 @@ public class Day6 : ISolve
         }
     }
 
-    public static string Solve2(string input)
+    public static string Solve2(string input, params object[] args)
     {
         for (var i = 0; i < input.Length; i++)
         {
@@ -47,7 +47,7 @@ public class Day6 : ISolve
         }
     }
 
-    public static string Solve1_LINQ(string input)
+    public static string Solve1_LINQ(string input, params object[] args)
     {
         var markerSize = 4;
         var result = input.Window(markerSize)

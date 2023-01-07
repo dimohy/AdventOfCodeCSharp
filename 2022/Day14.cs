@@ -16,7 +16,7 @@ namespace _2022
     /// </summary>
     public class Day14 : ISolve
     {
-        public static string Solve1(string input)
+        public static string Solve1(string input, params object[] args)
         {
             var grid = Parse(input);
             Console.WriteLine(grid);
@@ -28,12 +28,12 @@ namespace _2022
             return count.ToString(); ;
         }
 
-        public static string Solve2(string input)
+        public static string Solve2(string input, params object[] args)
         {
             var grid = Parse(input);
             Console.WriteLine(grid);
 
-            var maxRockY = grid.GetAllPotisions().Where(x => x.C is '#').Max(x => x.Y);
+            var maxRockY = grid.GetAllPotisions(true).Where(x => x.C is '#').Max(x => x.Y);
             grid.Bottom = (maxRockY + 2, '#');
 
             var count = Simulate(grid).Where(x => x is true).Count();
@@ -67,7 +67,7 @@ namespace _2022
         static IEnumerable<bool> Simulate(Grid grid)
         {
             var sp = (X: 500, Y: 0);
-            var maxRockY = grid.GetAllPotisions().Where(x => x.C is '#').Max(x => x.Y);
+            var maxRockY = grid.GetAllPotisions(true).Where(x => x.C is '#').Max(x => x.Y);
 
             while (true)
             {
@@ -117,10 +117,11 @@ namespace _2022
         {
             private readonly Dictionary<(int X, int Y), char> _grid = new();
             private char _clearChar;
+            private int _padding;
 
             public (int Y, char C) Bottom { get; set; }
 
-            public Grid(char clearChar = '.') => _clearChar = clearChar;
+            public Grid(char clearChar = '.', int padding = 0) => (_clearChar, _padding) = (clearChar, padding);
 
             public char this[int x, int y]
             {
@@ -138,11 +139,14 @@ namespace _2022
                 set => _grid[(x, y)] = value;
             }
 
-            public IEnumerable<(int X, int Y, char C)> GetAllPotisions()
+            public IEnumerable<(int X, int Y, char C)> GetAllPotisions(bool withBorder = false)
             {
                 var result = _grid.Select(x => (x.Key.X, x.Key.Y, x.Value));
-                if (Bottom.C is not '\0')
-                    result = result.Append((-1, Bottom.Y, Bottom.C));
+                if (withBorder is true)
+                {
+                    if (Bottom.C is not '\0')
+                        result = result.Append((-1, Bottom.Y, Bottom.C));
+                }
 
                 return result;
             }
@@ -172,10 +176,10 @@ namespace _2022
             {
                 var sb = new StringBuilder();
 
-                var positions = GetAllPotisions().Where(x => x.X > 0).Where(x => x.C != _clearChar);
-                var left = positions.Min(x => x.X) - 2;
-                var right = positions.Max(x => x.X) + 2;
-                var bottom = positions.Max(x => x.Y) + 4;
+                var positions = GetAllPotisions().Where(x => x.C != _clearChar);
+                var left = positions.Min(x => x.X) - _padding;
+                var right = positions.Max(x => x.X) + _padding;
+                var bottom = positions.Max(x => x.Y) + _padding;
                 var width = right - left + 1;
 
 

@@ -2,7 +2,7 @@
 
 public class Day7 : ISolve
 {
-    public static string Solve1(string input)
+    public static string Solve1(string input, params object[] args)
     {
         var lines = input.Split(Environment.NewLine);
         var root = Parse(lines);
@@ -68,7 +68,7 @@ public class Day7 : ISolve
     }
 
 
-    public static string Solve2(string input)
+    public static string Solve2(string input, params object[] args)
     {
         var lines = input.Split(Environment.NewLine);
         var root = Parse(lines);

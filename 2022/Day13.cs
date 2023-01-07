@@ -8,7 +8,7 @@ namespace _2022
 {
     public class Day13 : ISolve
     {
-        public static string Solve1(string input)
+        public static string Solve1(string input, params object[] args)
         {
             var items = input.Split(Environment.NewLine)
                 .Chunk(3)
@@ -30,7 +30,7 @@ namespace _2022
             return sum.ToString();
         }
 
-        public static string Solve2(string input)
+        public static string Solve2(string input, params object[] args)
         {
             var items = input.Split(Environment.NewLine, StringSplitOptions.TrimEntries)
                 .Where(x => x is not "")

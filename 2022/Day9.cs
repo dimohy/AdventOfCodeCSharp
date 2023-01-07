@@ -9,7 +9,7 @@ namespace _2022;
 
 public class Day9 : ISolve
 {
-    public static string Solve1(string input)
+    public static string Solve1(string input, params object[] args)
     {
         // 입력에서 헤드의 이동 얻기
         var headPoints = input
@@ -97,7 +97,7 @@ public class Day9 : ISolve
 
     }
 
-    public static string Solve2(string input)
+    public static string Solve2(string input, params object[] args)
     {
         // 입력에서 헤드의 이동 얻기
         var headHistory = input

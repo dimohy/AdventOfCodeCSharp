@@ -8,7 +8,7 @@ namespace _2022;
 
 public class Day8 : ISolve
 {
-    public static string Solve1(string input)
+    public static string Solve1(string input, params object[] args)
     {
         var map = MakeMap(input);
         var check = new bool[map.GetLength(0), map.GetLength(1)];
@@ -83,7 +83,7 @@ public class Day8 : ISolve
         return map;
     }
 
-    public static string Solve2(string input)
+    public static string Solve2(string input, params object[] args)
     {
         var map = MakeMap(input);
 

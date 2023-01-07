@@ -8,7 +8,7 @@ namespace _2022
 {
     public class Day12 : ISolve
     {
-        public static string Solve1(string input)
+        public static string Solve1(string input, params object[] args)
         {
             var mountain = Mountain.Parse(input, false);
 
@@ -62,7 +62,7 @@ namespace _2022
             }
         }
 
-        public static string Solve2(string input)
+        public static string Solve2(string input, params object[] args)
         {
             var mountain = Mountain.Parse(input, true);
 

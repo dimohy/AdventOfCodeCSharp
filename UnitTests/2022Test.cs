@@ -661,9 +661,51 @@ public class Day5Test
     [TestCase("""
         498,4 -> 498,6 -> 496,6
         503,4 -> 502,4 -> 502,9 -> 494,9
-        """, ExpectedResult = "24")]
+        """, ExpectedResult = "93")]
     public string Day14_Test2(string input)
     {
         return Day14.Solve2(input);
+    }
+
+    [TestCase("""
+        Sensor at x=2, y=18: closest beacon is at x=-2, y=15
+        Sensor at x=9, y=16: closest beacon is at x=10, y=16
+        Sensor at x=13, y=2: closest beacon is at x=15, y=3
+        Sensor at x=12, y=14: closest beacon is at x=10, y=16
+        Sensor at x=10, y=20: closest beacon is at x=10, y=16
+        Sensor at x=14, y=17: closest beacon is at x=10, y=16
+        Sensor at x=8, y=7: closest beacon is at x=2, y=10
+        Sensor at x=2, y=0: closest beacon is at x=2, y=10
+        Sensor at x=0, y=11: closest beacon is at x=2, y=10
+        Sensor at x=20, y=14: closest beacon is at x=25, y=17
+        Sensor at x=17, y=20: closest beacon is at x=21, y=22
+        Sensor at x=16, y=7: closest beacon is at x=15, y=3
+        Sensor at x=14, y=3: closest beacon is at x=15, y=3
+        Sensor at x=20, y=1: closest beacon is at x=15, y=3
+        """, 10, ExpectedResult = "26")]
+    public string Day15_Test1(string input, int y)
+    {
+        return Day15.Solve1(input, y);
+    }
+
+    [TestCase("""
+        Sensor at x=2, y=18: closest beacon is at x=-2, y=15
+        Sensor at x=9, y=16: closest beacon is at x=10, y=16
+        Sensor at x=13, y=2: closest beacon is at x=15, y=3
+        Sensor at x=12, y=14: closest beacon is at x=10, y=16
+        Sensor at x=10, y=20: closest beacon is at x=10, y=16
+        Sensor at x=14, y=17: closest beacon is at x=10, y=16
+        Sensor at x=8, y=7: closest beacon is at x=2, y=10
+        Sensor at x=2, y=0: closest beacon is at x=2, y=10
+        Sensor at x=0, y=11: closest beacon is at x=2, y=10
+        Sensor at x=20, y=14: closest beacon is at x=25, y=17
+        Sensor at x=17, y=20: closest beacon is at x=21, y=22
+        Sensor at x=16, y=7: closest beacon is at x=15, y=3
+        Sensor at x=14, y=3: closest beacon is at x=15, y=3
+        Sensor at x=20, y=1: closest beacon is at x=15, y=3
+        """, ExpectedResult = "56000011")]
+    public string Day15_Test2(string input)
+    {
+        return Day15.Solve2(input);
     }
 }

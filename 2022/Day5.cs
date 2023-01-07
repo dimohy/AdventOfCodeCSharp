@@ -8,7 +8,7 @@ namespace _2022;
 
 public class Day5 : ISolve
 {
-    public static string Solve1(string input)
+    public static string Solve1(string input, params object[] args)
     {
         //var lines = File.ReadAllText("day5_input.txt");
         //var lines = """
@@ -76,7 +76,7 @@ public class Day5 : ISolve
         return result;
     }
 
-    public static string Solve2(string input)
+    public static string Solve2(string input, params object[] args)
     {
         //var lines = File.ReadAllText("day5_input.txt");
         //var lines = """
