@@ -32,14 +32,19 @@ public class Day15 : ISolve
     {
         var (grid, points) = Parse(input);
 
-        var result = points
-            .Select(x => GetOutsides(x.Item1, x.Item1.Distance(x.Item2)).ToArray())
+        //Mark(grid, points); // 작은 맵의 경우 효과적이나 큰 맵의 경우 너무 오래 걸림
+        //Console.WriteLine(grid);
+
+        var outsidePoints = points
+            .Select(x => GetOutsides(x.Sensor, x.Sensor.Distance(x.Beacon)).ToArray())
             .SelectMany(x => x)
+            .GroupBy(x => x).Where(g => g.Count() >= 4).Select(x => x.Key)
             .ToArray()
-            .GroupBy(x => x).Select(g => (g.Key, g.Count())).OrderByDescending(x => x.Item2).ToArray().First();
+            .Where(x => points.All(y => y.Sensor.Distance(x) > y.Sensor.Distance(y.Beacon) is true))
+            .Where(x => x.X is >= 0 and <= 4000000 && x.Y is >= 0 and <= 4000000)
+            .First();
 
-
-        return (result.Key.X * 4000000 + result.Key.Y).ToString();
+        return ((long)outsidePoints.X * 4000000 + outsidePoints.Y).ToString();
     }
 
     static IEnumerable<Point> GetOutsides(Point sp, int distance)
@@ -96,16 +101,13 @@ public class Day15 : ISolve
     static void Mark(Grid grid, IEnumerable<(Point, Point)> points)
     {
         foreach (var p in points)
-        {
-            Console.WriteLine(p);
             MarkScan(p.Item1, p.Item2);
-        }
 
         void MarkScan(Point sp, Point bp)
         {
             var distance = sp.Distance(bp);
 
-            foreach (var y in Enumerable.Range(sp.X - distance, distance * 2 + 1))
+            foreach (var y in Enumerable.Range(sp.Y - distance, distance * 2 + 1))
             {
                 foreach (var x in Enumerable.Range(sp.X - distance, distance * 2 + 1))
                 {
@@ -115,8 +117,6 @@ public class Day15 : ISolve
                     if (grid[x, y] is '.')
                         grid[x, y] = '#';
                 }
-
-                Console.WriteLine(y);
             }
         }
     }
@@ -126,7 +126,7 @@ public class Day15 : ISolve
         public int Distance(Point another) => Math.Abs(X - another.X) + Math.Abs(Y - another.Y);
     }
 
-    static (Grid, IReadOnlyList<(Point, Point)> Points) Parse(string input, params object[] args)
+    static (Grid, IReadOnlyList<(Point Sensor, Point Beacon)> Points) Parse(string input, params object[] args)
     {
         var items = input.Split(Environment.NewLine)
             .Select(x => Regex.Match(x, @"Sensor at x=(-?[0-9]+), y=(-?[0-9]+): closest beacon is at x=(-?[0-9]+), y=(-?[0-9]+)"))
