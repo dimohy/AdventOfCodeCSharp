@@ -59,6 +59,10 @@ var day14Input = File.ReadAllText("day14_input.txt");
 Console.WriteLine(Day14.Solve1(day14Input));
 Console.WriteLine(Day14.Solve2(day14Input));
 
+var day15Input = File.ReadAllText("day15_input.txt");
+//Console.WriteLine(Day15.Solve1(day15Input, 2000000));
+Console.WriteLine(Day15.Solve2(day15Input));
+
 */
 
 var day15Input = File.ReadAllText("day15_input.txt");

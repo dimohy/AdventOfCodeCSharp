@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net7.0</TargetFramework>
+    <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
 
@@ -20,6 +20,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\2022\2022.csproj" />
+    <ProjectReference Include="..\2023\2023.csproj" />
   </ItemGroup>
 
   <ItemGroup>

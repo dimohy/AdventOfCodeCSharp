@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "2022", "2022\2022.csproj", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UnitTests", "UnitTests\UnitTests.csproj", "{BEECD980-7D35-4CA5-BF4E-C8D195A764E7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "2023", "2023\2023.csproj", "{345C03A3-B6FE-4730-B089-034DE7206CB5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -31,6 +33,14 @@ Global
 		{BEECD980-7D35-4CA5-BF4E-C8D195A764E7}.Release|Any CPU.Build.0 = Release|Any CPU
 		{BEECD980-7D35-4CA5-BF4E-C8D195A764E7}.Release|x64.ActiveCfg = Release|x64
 		{BEECD980-7D35-4CA5-BF4E-C8D195A764E7}.Release|x64.Build.0 = Release|x64
+		{345C03A3-B6FE-4730-B089-034DE7206CB5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{345C03A3-B6FE-4730-B089-034DE7206CB5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{345C03A3-B6FE-4730-B089-034DE7206CB5}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{345C03A3-B6FE-4730-B089-034DE7206CB5}.Debug|x64.Build.0 = Debug|Any CPU
+		{345C03A3-B6FE-4730-B089-034DE7206CB5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{345C03A3-B6FE-4730-B089-034DE7206CB5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{345C03A3-B6FE-4730-B089-034DE7206CB5}.Release|x64.ActiveCfg = Release|Any CPU
+		{345C03A3-B6FE-4730-B089-034DE7206CB5}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
