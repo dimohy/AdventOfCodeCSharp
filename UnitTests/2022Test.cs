@@ -1,8 +1,8 @@
 using _2022;
 
-namespace UnitTests;
+namespace _2022;
 
-public class Day5Test
+public class _2022Test
 {
     [SetUp]
     public void Setup()

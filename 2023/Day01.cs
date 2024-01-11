@@ -42,29 +42,19 @@ public sealed class Day01 : ISolve
         static IEnumerable<char> GetNumers(string input, bool isReverse)
         {
             Func<string, string, bool> checkFunc = isReverse is false ? (string text, string s) => text.StartsWith(s) : (string text, string s) => text.EndsWith(s);
-            Func<int, string> getFunc = isReverse is false ? (int index) => input[index..] : (int index) => input[..^index];
-
+            Func<int, string> getTextFunc = isReverse is false ? (int index) => input[index..] : (int index) => input[..^index];
+            Func<int, char> getNumFunc = isReverse is false ? index => input[index] : index => input[^(index + 1)]; 
 
             for (var i = 0; i < input.Length; i++)
             {
-                if (isReverse is false)
+                var c = getNumFunc(i);
+                if (c >= '1' && c <= '9')
                 {
-                    if (input[i] >= '1' && input[i] <= '9')
-                    {
-                        yield return input[i];
-                        continue;
-                    }
-                }
-                else
-                {
-                    if (input[^(i + 1)] >= '1' && input[^(i + 1)] <= '9')
-                    {
-                        yield return input[^(i + 1)];
-                        continue;
-                    }
+                    yield return c;
+                    continue;
                 }
 
-                var text = getFunc(i);
+                var text = getTextFunc(i);
                 if (checkFunc(text, "one"))
                 {
                     yield return '1';
