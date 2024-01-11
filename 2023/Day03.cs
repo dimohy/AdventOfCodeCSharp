@@ -75,7 +75,7 @@ public class Day03 : ISolve
         foreach (var gear in gears)
         {
             var nums = numbers.Where(x => gear.IsAdjacent(x) is true).ToArray();
-            if (nums.Count() != 2)
+            if (nums.Length != 2)
                 continue;
 
             sum += nums[0].Number * nums[1].Number;
